@@ -8,7 +8,7 @@ public class HelloMain {
 
 	public static void main(String[] args) {
 		AbstractApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class); 
-//				new GenericXmlApplicationContext("application-config.xml");
+
 		System.out.println("-----------------------");
 		HelloController controller = context.getBean("helloController", HelloController.class);
 		controller.hello("홍길동");
