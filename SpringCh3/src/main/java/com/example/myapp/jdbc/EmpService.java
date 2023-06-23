@@ -32,38 +32,32 @@ public class EmpService implements IEmpService{
 
 	@Override
 	public List<EmpVO> getEmpList() {
-		// TODO Auto-generated method stub
-		return null;
+		return empRepository.getEmpList();
 	}
 
 	@Override
 	public List<Map<Integer, String>> getAllDeptId() {
-		// TODO Auto-generated method stub
-		return null;
+		return empRepository.getAllDeptId();
 	}
 
 	@Override
 	public List<Map<String, Object>> getAllJobId() {
-		// TODO Auto-generated method stub
-		return null;
+		return empRepository.getAllJobId();
 	}
 
 	@Override
 	public void updateEmp(EmpVO emp) {
-		// TODO Auto-generated method stub
-		
+		empRepository.updateEmp(emp);
 	}
 
 	@Override
 	public void insertEmp(EmpVO emp) {
-		// TODO Auto-generated method stub
-		
+		empRepository.insertEmp(emp);
 	}
 
 	@Override
 	public void deleteEmp(int empid, String email) {
-		// TODO Auto-generated method stub
-		
+		empRepository.deleteEmp(empid, email);
 	}
 
 }

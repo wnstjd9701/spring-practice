@@ -118,14 +118,28 @@ public class EmpRepository implements IEmpRepository{
 
 	@Override
 	public void insertEmp(EmpVO emp) {
-		// TODO Auto-generated method stub
-		
+		String sql = "INSERT INTO employees (employee_id, first_name, " 
+				+ " last_name, email, phone_number, hire_date, job_id, "
+				+ " salary, commission_pct, manager_id, department_id, "
+				+ " VALUES (?,?,?,?,?,SYSDATE,?,?,?,?,?";
+		jdbcTemplate.update(sql, 
+				emp.getEmployeeId(),
+				emp.getFirstName(),
+				emp.getLastName(),
+				emp.getEmail(),
+				emp.getPhoneNumber(),
+				emp.getJobId(),
+				emp.getSalary(),
+				emp.getCommissionPct(),
+				emp.getManagerId(),
+				emp.getDepartmentId()
+		);
 	}
 
 	@Override
 	public void deleteEmp(int empid, String email) {
-		// TODO Auto-generated method stub
-		
+		String sql = "DELETE FROM employees WHERE employee_id=? AND email=?";
+		jdbcTemplate.update(sql, empid, email);
 	}
 
 }

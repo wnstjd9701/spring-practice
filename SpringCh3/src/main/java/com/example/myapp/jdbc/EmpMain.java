@@ -15,5 +15,6 @@ public class EmpMain {
 		System.out.println(service.getEmpCount(50));
 		System.out.println(service.getEmpInfo(103));
 		System.out.println("-----------------------------------");
+		
 	}
 }
