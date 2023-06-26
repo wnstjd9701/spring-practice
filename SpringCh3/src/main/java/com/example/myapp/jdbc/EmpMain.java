@@ -13,7 +13,7 @@ public class EmpMain {
 		System.out.println("-----------------------------------");
 		System.out.println(service.getEmpCount());
 		System.out.println(service.getEmpCount(50));
-		System.out.println(service.getEmpInfo(103));
+		System.out.println(service.getEmpInfo(300));
 		System.out.println("-----------------------------------");
 		
 	}
