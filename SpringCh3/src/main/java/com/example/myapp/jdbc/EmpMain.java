@@ -15,6 +15,6 @@ public class EmpMain {
 		System.out.println(service.getEmpCount(50));
 		System.out.println(service.getEmpInfo(300));
 		System.out.println("-----------------------------------");
-		
+		System.out.println(service.deleteEmp(210, "JUN"));
 	}
 }

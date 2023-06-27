@@ -137,9 +137,26 @@ public class EmpRepository implements IEmpRepository{
 	}
 
 	@Override
-	public void deleteEmp(int empid, String email) {
-		String sql = "DELETE FROM employees WHERE employee_id=? AND email=?";
-		jdbcTemplate.update(sql, empid, email);
+	public void deleteJobHistory(int empid) {
+		String sql = "DELETE FROM job_history WHERE employee_id=?";
+		jdbcTemplate.update(sql, empid);
 	}
+	@Override
+	public int deleteEmp(int empid, String email) {
+		String sql = "DELETE FROM employees WHERE employee_id=? AND email=?";
+		return jdbcTemplate.update(sql, empid, email);
+	}
+
+	@Override
+	public List<Map<String, Object>> getAllManagerId() {
+		String sql = "SELECT " 
+				+ " d.manager_id as managerId, e.first_name as firstName "
+				+ " FROM departments d "
+				+ " JOIN employees e ON d.manager_id = e.employee_id "
+				+ " ORDER BY d.manager_id";
+		return jdbcTemplate.queryForList(sql);
+	}
+
+	
 
 }

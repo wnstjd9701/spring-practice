@@ -12,5 +12,5 @@ public interface IEmpService {
 	EmpVO getEmpInfo(int empid);
 	void updateEmp(EmpVO emp);
 	void insertEmp(EmpVO emp);
-	void deleteEmp(int empid, String email);
+	int deleteEmp(int empid, String email);
 }
