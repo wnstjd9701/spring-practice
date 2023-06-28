@@ -27,10 +27,14 @@ public class EmpRepository implements IEmpRepository{
 				emp.setEmployeeId(rs.getInt("employee_id"));
 				emp.setFirstName(rs.getString("first_name"));
 				emp.setLastName(rs.getString("last_name"));
-				emp.setEmail(rs.getString("phone_number"));
+				emp.setEmail(rs.getString("email"));
+				emp.setPhoneNumber(rs.getString("phone_number"));
 				emp.setHireDate(rs.getDate("hire_date"));
 				emp.setJobId(rs.getString("job_id"));
 				emp.setSalary(rs.getDouble("salary"));
+				emp.setCommissionPct(rs.getDouble("commission_pct"));
+				emp.setManagerId(rs.getInt("manager_id"));
+				emp.setDepartmentId(rs.getInt("department_id"));
 				return emp;
 			};
 		});

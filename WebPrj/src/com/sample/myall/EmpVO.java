@@ -1,7 +1,7 @@
 package com.sample.myall;
 
 public class EmpVO {
-	String data;
+	private String data;
 	public void setData(String data) {
 		this.data = data;
 	}
