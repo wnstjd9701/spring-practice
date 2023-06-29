@@ -37,7 +37,7 @@ public class EmpService implements IEmpService{
 	}
 
 	@Override
-	public List<Map<Integer, String>> getAllDeptId() {
+	public List<Map<String, Object>> getAllDeptId() {
 		return empRepository.getAllDeptId();
 	}
 
@@ -63,4 +63,8 @@ public class EmpService implements IEmpService{
 		return empRepository.deleteEmp(empid, email);
 	}
 
+	@Override
+	public List<Map<String, Object>> getAllManagerId() {
+		return empRepository.getAllManagerId();
+	}
 }

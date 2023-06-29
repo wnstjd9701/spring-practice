@@ -13,6 +13,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public class EmpRepository implements IEmpRepository{
+	
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 	
@@ -41,16 +42,9 @@ public class EmpRepository implements IEmpRepository{
 	}
 
 	@Override
-	public List<Map<Integer, String>> getAllDeptId() {
-		String sql = "SELECT department_id, department_name FROM departments";
-		return jdbcTemplate.query(sql, new RowMapper<Map<Integer, String>>(){
-			@Override
-			public Map<Integer, String> mapRow(ResultSet rs, int rowNum) throws SQLException {
-				Map<Integer, String> deptMap = new HashMap<Integer, String>();
-				deptMap.put(rs.getInt("department_id"), rs.getString("department_name"));
-				return deptMap;
-			};
-		});
+	public List<Map<String, Object>> getAllDeptId() {
+		String sql = "SELECT department_id as departmentId, department_name as departmentName FROM departments";
+		return jdbcTemplate.queryForList(sql);
 	}
 
 	@Override
@@ -104,7 +98,7 @@ public class EmpRepository implements IEmpRepository{
 	public void updateEmp(EmpVO emp) {
 		String sql = "UPDATE employees "
 				+ " SET first_name=?, last_name=?, email=?, "
-				+ " phone_number=? hire_date=?, manager_id=?, "
+				+ " phone_number=?, hire_date=?, job_id=?, "
 				+ " salary=?, commission_pct=?, manager_id=?, "
 				+ " department_id=? WHERE employee_id=?";
 		jdbcTemplate.update(sql,
@@ -117,6 +111,7 @@ public class EmpRepository implements IEmpRepository{
 				emp.getSalary(), 
 				emp.getCommissionPct(), 
 				emp.getManagerId(), 
+				emp.getDepartmentId(),
 				emp.getEmployeeId());
 	}
 

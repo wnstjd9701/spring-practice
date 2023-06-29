@@ -40,17 +40,17 @@ public class EmpMain {
 //         System.out.println(e.getMessage());
 //      }
       
-      System.out.println("신규 사원의 정보를 조회/출력합니다");
-      EmpVO emp210 = empService.getEmpInfo(210);
-      System.out.println(emp210);
+//      System.out.println("신규 사원의 정보를 조회/출력합니다");
+//      EmpVO emp210 = empService.getEmpInfo(210);
+//      System.out.println(emp210);
       
 //      System.out.println("210번 사원의 급여를 10% 인상");
 //      emp210.setSalary(emp.getSalary()*1.1);
 //      System.out.println(emp210);
       
-      System.out.println("수정된 사원의 정보를 조회/출력");
-      emp210 = empService.getEmpInfo(210);
-      System.out.println(emp210);
+//      System.out.println("수정된 사원의 정보를 조회/출력");
+//      emp210 = empService.getEmpInfo(210);
+//      System.out.println(emp210);
       
 //      System.out.println("210번 사원의 정보를 삭제");
 //      empService.deleteEmp(210, "wh467925");
@@ -64,8 +64,8 @@ public class EmpMain {
 //      System.out.println("모든 매니저번호와 매니저이름을 출력합니다.");
 //      System.out.println(empService.getAllManagerId());
       
-      List<Map<Integer, String>> deptInfo = empService.getAllDeptId();
-      for(Map<Integer, String> deptId : deptInfo) {
+      List<Map<String, Object>> deptInfo = empService.getAllDeptId();
+      for(Map<String, Object> deptId : deptInfo) {
          System.out.println(deptId.get("DEPARTMENTID"));
          System.out.println(deptId.get("DEPARTMENTNAME"));
       }

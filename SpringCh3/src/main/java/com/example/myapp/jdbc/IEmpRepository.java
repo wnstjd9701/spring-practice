@@ -5,7 +5,7 @@ import java.util.Map;
 
 public interface IEmpRepository {
 	List<EmpVO> getEmpList();
-	List<Map<Integer, String>> getAllDeptId();
+	List<Map<String, Object>> getAllDeptId();
 	List<Map<String, Object>> getAllJobId();
 	List<Map<String, Object>> getAllManagerId();
 	int getEmpCount();
@@ -15,5 +15,4 @@ public interface IEmpRepository {
 	void insertEmp(EmpVO emp);
 	void deleteJobHistory(int empid);
 	int deleteEmp(int empid, String email);
-	
 }
